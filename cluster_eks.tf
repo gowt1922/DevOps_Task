@@ -5,7 +5,7 @@ locals {
 
 
 module "vpc" {
-  source = "git::ssh://git@github.com/reactiveops/terraform-vpc.git?ref=v5.0.1"
+  source = "git::ssh://git@github.com:gowt1922/DevOps_Task.git"
 
   aws_region = "us-east-1"
   az_count   = 3
@@ -18,7 +18,7 @@ module "vpc" {
 
 
 module "eks" {
-  source       = "git::https://github.com/terraform-aws-modules/terraform-aws-eks.git?ref=v12.1.0"
+  source       = "git::https://github.com/gowt1922/DevOps_Task.git"
   cluster_name = local.cluster_name
   vpc_id       = module.vpc.aws_vpc_id
   subnets      = module.vpc.aws_subnet_private_prod_ids
